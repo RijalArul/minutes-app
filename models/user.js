@@ -1,5 +1,6 @@
 const { Model, Sequelize } = require('sequelize')
 const { isEmail } = require('validator') // Import the validator library to check email format
+const { hashPassword } = require('../helpers/bcrypt')
 
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
@@ -39,5 +40,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   )
 
+  User.beforeCreate(async (user, options) => {
+    const hashedPassword = await hashPassword(user.password)
+    user.password = hashedPassword
+  })
   return User
 }
