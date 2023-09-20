@@ -1,5 +1,4 @@
 const { Model, Sequelize } = require('sequelize')
-const { isEmail } = require('validator') // Import the validator library to check email format
 const { hashPassword } = require('../helpers/bcrypt')
 
 module.exports = (sequelize, DataTypes) => {
