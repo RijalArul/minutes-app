@@ -27,6 +27,15 @@ module.exports = {
         onUpdate: 'CASCADE', // Optional: This updates the foreign key if the referenced column is updated
         onDelete: 'SET NULL' // Optional: This sets the foreign key to null if the referenced row is deleted
       },
+      transaction_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Transactions', // The name of the target table
+          key: 'id' // The name of the target column
+        },
+        onUpdate: 'CASCADE', // Optional: This updates the foreign key if the referenced column is updated
+        onDelete: 'SET NULL' // Optional: This sets the foreign key to null if the referenced row is deleted
+      },
       quantity: {
         type: Sequelize.INTEGER,
         defaultValue: 0

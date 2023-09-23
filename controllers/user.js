@@ -40,7 +40,7 @@ class UserController {
           jwt: signToken
         })
       } else {
-        throw new Error('Invalid_Password')
+        throw { name: 'Invalid_Password' }
       }
     } catch (err) {
       next(err)

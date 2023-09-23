@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'product_id'
       })
 
+      // Associate TransactionProduct with Transaction
       TransactionProduct.belongsTo(models.Transaction, {
         foreignKey: 'transaction_id'
       })

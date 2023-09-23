@@ -19,6 +19,10 @@ function errorHandler (err, req, res, next) {
       statusCode = 404
       errorMessage = `${err.type} not found`
       return res.status(statusCode).json({ error: errorMessage })
+    case 'FileSizeMax255KBSupportedFilesJusTBetweenJpegAndPng':
+      statusCode = 400
+      errorMessage = 'Flie max size 255 KB and formmted By Jpeg or PNG'
+      return res.status(statusCode).json({ error: errorMessage })
 
     default:
       return res.status(statusCode).json({ error: errorMessage })

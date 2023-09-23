@@ -40,8 +40,35 @@ class PayloadRequestSupplier {
   }
 }
 
+class PayloadRequestProduct {
+  createPayload (
+    product_name,
+    description,
+    price,
+    stock_quantity,
+    image,
+    product_type_id,
+    brand_id,
+    supplier_id,
+    status
+  ) {
+    return {
+      product_name,
+      description,
+      price,
+      stock_quantity,
+      image,
+      product_type_id,
+      brand_id,
+      supplier_id,
+      status
+    }
+  }
+}
+
 module.exports = {
   PayloadRequestProductType,
   PayloadRequestBrand,
-  PayloadRequestSupplier
+  PayloadRequestSupplier,
+  PayloadRequestProduct
 }
