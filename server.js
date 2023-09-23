@@ -12,7 +12,7 @@ app.use(express.json())
 app.use(express.static(__dirname + '/public'))
 app.use('/uploads', express.static('uploads'))
 
-const PORT = 3003
+const PORT = process.env.PORT
 
 app.use('/api/v1', indexRouter)
 
